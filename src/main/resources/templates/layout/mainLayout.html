@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:fragment="main-fragment(title, otherStaticResources, header, nav, mainContent, footer)">
+
+<head>
+	<title th:replace="${title}">Pagina main</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" href="../../css/main.css">
+	<th:block th:replace="${otherStaticResources} ?: ~{}"></th:block>
+
+</head>
+
+<body>
+
+	<header th:insert="${header} ?: ~{}">
+	<h1>Pagina Home</h1>
+	</header>
+	<section>
+		<nav th:insert="${nav} ?: ~{}">
+			<ul>
+				<li>Pagina 1</li>
+				<li>Pagina 2</li>
+			</ul>
+
+		</nav>
+		<article th:insert="${mainContent} ?: ~{}">
+			<h1>Page 1</h1>
+			<p>Main contect of page 1</p>
+		</article>
+	</section>
+	<footer th:insert="${footer} ?: ~{}">
+		<p>Pelusa caligari, footer</p>
+
+	</footer>
+
+
+</body>
+
+</html>
