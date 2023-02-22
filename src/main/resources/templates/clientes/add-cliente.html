@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Registro de información</title>
+	<meta charset="ISO-8859-1">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Navegacion</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/dashboard.css}" href="../../css/dashboard.css">
+</head>
+
+<body>
+	<div id="add-cliente-header">
+		Header of Home Page
+	</div>
+	<div id="add-cliente-nav">
+		Home Nav
+	</div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-2 sidebar">
+				<ul class="list-unstyled">
+					<li><a th:href="@{/}">Home</a></li>
+					<li><a th:href="@{/clientes}">Clientes</a></li>
+					<li><a th:href="@{/proveedores}">Proveedor</a></li>
+					<li><a th:href="@{/categorias}">Categoria</a></li>
+					<li><a th:href="@{/productos}">Producto</a></li>
+				</ul>
+			</div>
+			<div class="col-md-9">
+				<div id="add-cliente-main-content">
+					<h2>Form</h2>
+					<form action="#" th:action="@{/addcliente}" method="post" th:object="${cliente}">
+						<div class="row">
+							<div>
+								<label for"name">Name</label>
+								<input type="text" th:field="*{name}" id="name" placeholder="name" />
+
+							</div>
+							<div>
+								<label for"surname">Surname</label>
+								<input type="text" th:field="*{surname}" id="surname" placeholder="surname" />
+
+							</div>
+							<div>
+								<label for"email">Email</label>
+								<input type="text" th:field="*{email}" id="email" placeholder="email" />
+
+							</div>
+
+							<div>
+								<label for"telefono">Telefono</label>
+								<input type="text" th:field="*{telefono}" id="telefono" placeholder="telefono" />
+
+							</div>
+							<div class="row">
+								<div>
+									<input type="submit" value="Añadir cliente">
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+
+</html>

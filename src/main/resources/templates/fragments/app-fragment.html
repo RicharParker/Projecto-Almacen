@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title th:replace="${title}">App fragmentes</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" href="../../css/main.css">
+
+</head>
+
+<body>
+	<u th:fragment="nav-default">
+		<li>
+			<a th:href="@{/}">Home</a>
+		</li>
+		<li> <a th:href="@{/products}">Products</a></li>
+		<li> <a th:href="@{/about}">about</a> </li> 
+		<li> <a th:href="@{/usuarios}">usuarios</a> </li>
+			<li> <a th:href="@{/customers}">Customers</a> </li>
+	</u>
+	
+	
+	<div th:fragment="copyright">
+		ulsa.edu.mx
+		
+	</div>
+
+</body>
+
+</html>

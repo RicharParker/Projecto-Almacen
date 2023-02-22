@@ -23,34 +23,19 @@ public class Inventario {
 	@Nonnull
 	private float cantidad;
 
-	@OneToMany(mappedBy = "inventario")
-	private List<Producto> productos;
 
 	public Inventario() {
 
 	}
 	
 
-	public Inventario(long id_inventario, String fecha, float cantidad, List<Producto> productos) {
+	public Inventario(long id_inventario, String fecha, float cantidad) {
 		super();
 		this.id_inventario = id_inventario;
 		this.fecha = fecha;
 		this.cantidad = cantidad;
-		this.productos = productos;
+
 	}
-
-
-
-	public List<Producto> getProductos() {
-		return productos;
-	}
-
-
-
-	public void setProductos(List<Producto> productos) {
-		this.productos = productos;
-	}
-
 
 
 	public long getId_inventario() {

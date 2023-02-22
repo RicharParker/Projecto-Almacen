@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns=:th="http://thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Title of clientes page</title>
+</head>
+
+<body>
+	<div id="clientes-header">
+		Header of Customers Page
+	</div>
+	<div id="clientes-nav">
+		Customers Nav
+	</div>
+	<div id="clientes-main-content">
+		<div th:switch="${clientes}">
+			<div class="row">
+				<div>
+					<h2 th:case="null">No clientes</h2>
+					<div th:case="*">
+						<h2>Customers</h2>
+						<table border="1">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Surname</th>
+									<th>Email</th>
+									<th>Telefono</th>
+									<th>Edit</th>
+									<th>Delete</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="cliente : ${clientes}">
+									<td th:text="${cliente.name}"></td>
+									<td th:text="${cliente.surname}"></td>
+									<td th:text="${cliente.email}"></td>
+									<td th:text="${cliente.telefono}"></td>
+									<td>
+										<a th:href="@{/edit/{id}(id=${cliente.id_cliente})}">
+											EDIT
+									</td>
+									<td>
+										<a th:href="@{/delete/{id}(id=${cliente.id_cliente})}">
+											DELETE
+										</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<p>
+						<a th:href="@{/new}">Add Customer</a>
+					</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+
+</html>

@@ -23,35 +23,17 @@ public class Categoria {
 	@Nonnull
 	private String descripcion;
 
-	@OneToMany(mappedBy = "categoria")
-	private List<Producto> productos;
-
 	public Categoria() {
 
 	}
 	
 
-	public Categoria(long id_categoria, String name, String descripcion, List<Producto> productos) {
+	public Categoria(long id_categoria, String name, String descripcion) {
 		super();
 		this.id_categoria = id_categoria;
 		this.name = name;
 		this.descripcion = descripcion;
-		this.productos = productos;
 	}
-
-
-
-	public List<Producto> getProductos() {
-		return productos;
-	}
-
-
-
-	public void setProductos(List<Producto> productos) {
-		this.productos = productos;
-	}
-
-
 
 	public long getId_categoria() {
 		return id_categoria;

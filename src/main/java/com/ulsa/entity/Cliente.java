@@ -29,51 +29,22 @@ public class Cliente {
 	@Nonnull
 	private String telefono;
 
-	@OneToMany(mappedBy = "cliente")
-	private List<Pedido> pedidos;
-
-	@OneToMany(mappedBy = "cliente")
-	private List<Venta> ventas;
-
 	public Cliente() {
 
 	}
 
 	
-
-	public Cliente(long id_cliente, String name, String surname, String email, String telefono, List<Pedido> pedidos,
-			List<Venta> ventas) {
+	public Cliente(long id_cliente, String name, String surname, String email, String telefono) {
 		super();
 		this.id_cliente = id_cliente;
 		this.name = name;
 		this.surname = surname;
 		this.email = email;
 		this.telefono = telefono;
-		this.pedidos = pedidos;
-		this.ventas = ventas;
+
 	}
 
 
-
-	public List<Venta> getVentas() {
-		return ventas;
-	}
-
-
-
-	public void setVentas(List<Venta> ventas) {
-		this.ventas = ventas;
-	}
-
-
-
-	public List<Pedido> getPedidos() {
-		return pedidos;
-	}
-
-	public void setPedidos(List<Pedido> pedidos) {
-		this.pedidos = pedidos;
-	}
 
 	public long getId_cliente() {
 		return id_cliente;

@@ -26,8 +26,6 @@ public class Proveedor {
 	@Nonnull
 	private String telefono;
 
-	@OneToMany(mappedBy = "proveedor")
-	private List<Compra> compra;
 
 	public Proveedor() {
 
@@ -35,28 +33,13 @@ public class Proveedor {
 	
 	
 
-	public Proveedor(long id_proveedor, String name, String direccion, String telefono, List<Compra> compra) {
+	public Proveedor(long id_proveedor, String name, String direccion, String telefono) {
 		super();
 		this.id_proveedor = id_proveedor;
 		this.name = name;
 		this.direccion = direccion;
 		this.telefono = telefono;
-		this.compra = compra;
 	}
-
-
-
-	public List<Compra> getCompra() {
-		return compra;
-	}
-
-
-
-	public void setCompra(List<Compra> compra) {
-		this.compra = compra;
-	}
-
-
 
 	public long getId_proveedor() {
 		return id_proveedor;

@@ -2,45 +2,43 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<title>Home</title>
 
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Navegacion</title>
+		<title>Dashboard</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" type="text/css" th:href="@{/css/dashboard.css}" href="../../css/dashboard.css">
-
-
 	</head>
-
-	<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" href="../../css/main.css">
-
 </head>
 
 <body>
+	<u th:fragment="nav-default">
+		<li>
+			<a th:href="@{/}">Home</a>
+		</li>
+		<li> <a th:href="@{/products}">Producssts</a></li>
+		<li> <a th:href="@{/about}">about</a> </li>
+		<li> <a th:href="@{/usuarios}">usuarios</a> </li>
+		<li> <a th:href="@{/clientes}">Customers</a> </li>
+	</u>
 
-	<div class="container-fluid">
+
+	<div th:fragment="nav-default" class="container-fluid">
 		<div class="row">
+			<!-- Sidebar -->
 			<div class="col-md-2 sidebar">
 				<ul class="list-unstyled">
-					<li><a th:href="@{/}">Home</a></li>
-					<li><a th:href="@{/clientes}">Clientes</a></li>
-					<li><a th:href="@{/proveedores}">Proveedor</a></li>
-					<li><a th:href="@{/categorias}">Categoria</a></li>
-					<li><a th:href="@{/productos}">Producto</a></li>
+					<li><a href="#">Dashboard</a></li>
+					<li><a href="#">Users</a></li>
+					<li><a href="#">Settings</a></li>
+					<li><a href="#">Reports</a></li>
 				</ul>
 			</div>
-			<div class="col-md-9">
-				<h1>Bienvenidos</h1>
-			</div>
+
 		</div>
 	</div>
-
-
-
 
 
 </body>

@@ -18,12 +18,13 @@ import org.thymeleaf.expression.Arrays;
 
 @Controller
 public class MyController {
-
 	
 	@GetMapping("/")
 	public String homePage() {
 		return "home";
 	}
+	
+	
 	
 	
 	
