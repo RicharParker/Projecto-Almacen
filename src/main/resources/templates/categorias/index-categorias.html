@@ -11,6 +11,15 @@
 	<div id="categorias-main-content">
 		<div th:switch="${categorias}">
 			<div class="row">
+				<div class="col-md-2 sidebar">
+					<ul class="list-unstyled">
+						<li><a th:href="@{/}">Home</a></li>
+						<li><a th:href="@{/clientes}">Clientes</a></li>
+						<li><a th:href="@{/productos}">Producto</a></li>
+						<li><a th:href="@{/categorias}">Categoria</a></li>
+						<li><a th:href="@{/proveedores}">Proveedor</a></li>
+					</ul>
+				</div>
 				<div>
 					<h2 th:case="null">No categorias</h2>
 					<div th:case="*">
@@ -28,7 +37,7 @@
 								<tr th:each="categoria : ${categorias}">
 									<td th:text="${categoria.name}"></td>
 									<td th:text="${categoria.descripcion}"></td>
-	
+
 									<td>
 										<a th:href="@{/editCategoria/{id}(id=${categoria.id_categoria})}">
 											EDIT
