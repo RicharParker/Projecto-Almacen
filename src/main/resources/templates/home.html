@@ -1,48 +1,128 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 
 <head>
-	<title>Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<th:block id="home-static-resources">
+		<link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" href="../../css/styles.css">
+	</th:block>
 
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Navegacion</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" type="text/css" th:href="@{/css/dashboard.css}" href="../../css/dashboard.css">
-
-
-	</head>
-
-	<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" href="../../css/main.css">
+  <title>Página de inicio</title>
 
 </head>
 
-<body>
+<body class="lead text-center">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <h3 class="masthead-brand">Página de inicio</h3>
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link active" href="#">Home</a>
+          <a class="nav-link" th:href="@{/login}">Login</a>
+          <a class="nav-link" href="#">Contact</a>
+        </nav>
+      </div>
 
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-2 sidebar">
-				<ul class="list-unstyled">
-					<li><a th:href="@{/}">Home</a></li>
-					<li><a th:href="@{/clientes}">Clientes</a></li>
-					<li><a th:href="@{/proveedores}">Proveedor</a></li>
-					<li><a th:href="@{/categorias}">Categoria</a></li>
-					<li><a th:href="@{/productos}">Producto</a></li>
-				</ul>
-			</div>
-			<div class="col-md-9">
-				<h1>Bienvenidos</h1>
-			</div>
-		</div>
-	</div>
+    </header>
+
+    <main role="main" class="lead inner cover">
+      <h1 class="cover-heading">Administración de un almacen</h1>
+      <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae repellendus magnam assumenda,
+        deleniti consequuntur minus ipsa beatae deserunt voluptas esse ad provident nesciunt harum perspiciatis? Soluta rerum
+        molestiae nemo nam!</p>
+      <p class="lead">
+        <a href="#" class="btn btn-lg btn-secondary">< / Explore></a>
+      </p>
+    </main>
+
+    <a name="horizontal-scrolling"></a>
+    <div>
+      <div id="scroll">
+
+        <a href="#"><img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&h=350">
+        </a>
+        <a href="#"><img src="https://images.pexels.com/photos/34676/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350">
+        </a>
+        <a href="#"><img src="https://images.pexels.com/photos/248515/pexels-photo-248515.png?auto=compress&cs=tinysrgb&h=350">
+        </a>
+        <a href="#"><img src="https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg?auto=compress&cs=tinysrgb&h=350">
+        </a>
+        <a href="#"><img src="https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&cs=tinysrgb&h=350">
+        </a>
+        <a href="#"><img src="https://images.pexels.com/photos/225769/pexels-photo-225769.jpeg?auto=compress&cs=tinysrgb&h=350">
+        </a>
+        <a href="#"><img src="https://images.pexels.com/photos/276452/pexels-photo-276452.jpeg?auto=compress&cs=tinysrgb&h=350">
+        </a>
+        <a href="#"><img src="https://images.pexels.com/photos/97077/pexels-photo-97077.jpeg?auto=compress&cs=tinysrgb&h=350">
+        </a>
+        <a href="#"><img src="https://images.pexels.com/photos/965345/pexels-photo-965345.jpeg?auto=compress&cs=tinysrgb&h=350">
+        </a>
+        <a href="#"><img src="https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350">
+        </a>
+      </div>
+    </div>
+
+    <h1>¿Quienes somos?</h1>
+    <div class="div-p container">
+      <p class="p">
+        By using overflow-y, we can create scroll bars when the contents of this div are bigger/higher than the container. Also,
+        by setting this paragraph to 250 percent, it is automatically 250 percent higher than the parent container - forcing
+        an overflow. Also, setting 100% width covers page and makes it responsive. <br> Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Molestiae nesciunt ipsam, labore obcaecati itaque explicabo quam ipsum? Perspiciatis
+        reiciendis, sint sequi itaque commodi explicabo ad fugit? Omnis fugit officia fuga!
+      </p>
+    </div>
+    <br>
 
 
 
+    <footer class="mastfoot mt-auto">
+      <div class="inner">
+        <p class="lead">Lorem ipsum, dolor sit amet adipisicing elit. Enim tempora aut accusantium, vel nostrum error dicta
+          nsequatur molestiae?</p>
+      </div>
+    </footer>
 
 
+    <footer class="mastfoot mt-auto">
+      <div class="inner">
+        <div class="container icons-social float-middle">
+
+          <a target="_blank" href="https://github.com/singhofen"><i class="fab fa-github"></i></a>
+
+          <a target="_blank" href="https://www.linkedin.com/in/chasesinghofen"><i class="fab fa-linkedin" id="fa-linkedin"></i></a>
+
+          <a target="_blank" href="https://plus.google.com"><i class="fab fa-google-plus-g"></i></a>
+
+          <a target="_blank" href="https://medium.com/@ch83311s"><i class="fab fa-medium"></i></a>
+
+          <a target="_blank" href="https://www.freecodecamp.org"><i class="fab fa-free-code-camp"></i></a>
+
+          <a target="_blank" href="https://codepen.io/csinghofen/"><i class="fab fa-codepen"></i></a>
+
+          <a href="mailto:ch83311s@yahoo.com?Subject=Inquire%20about%20Web%20Development">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <p class="lead float-right">
+            <a id="back-to-top" href="#">
+              <i id="fa-hand-up" class="fa">&#xf0a6;</i>
+            </a>
+          </p>
+          <br><br>
+          <hr>
+        </div>
+    </footer>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </body>
 
 </html>
