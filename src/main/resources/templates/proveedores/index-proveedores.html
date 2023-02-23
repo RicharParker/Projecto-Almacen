@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns=:th="http://thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Title of proveedores page</title>
+</head>
+
+<body>
+
+	<div id="proveedores-main-content">
+		<div th:switch="${proveedores}">
+			<div class="row">
+				<div>
+					<h2 th:case="null">No proveedores</h2>
+					<div th:case="*">
+						<h2>Proveedor</h2>
+						<table border="1">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>direccion</th>
+									<th>telefono</th>
+									<th>Edit</th>
+									<th>Delete</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="proveedor : ${proveedores}">
+									<td th:text="${proveedor.name}"></td>
+									<td th:text="${proveedor.direccion}"></td>
+									<td th:text="${proveedor.telefono}"></td>
+
+									<td>
+										<a th:href="@{/editProveedor/{id}(id=${proveedor.id_proveedor})}">
+											EDIT
+									</td>
+									<td>
+										<a th:href="@{/deleteProveedor/{id}(id=${proveedor.id_proveedor})}">
+											DELETE
+										</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<p>
+						<a th:href="@{/newProveedor}">Add Proveedor</a>
+					</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+
+</html>
