@@ -8,15 +8,10 @@
 </head>
 
 <body>
-	<div id="add-cliente-header">
-		Header of Home Page
-	</div>
-	<div id="add-cliente-nav">
-		Home Nav
-	</div>
+
 	<div id="add-cliente-main-content">
 		<h2>Form</h2>
-		<form action="#" th:action="@{/update/{id_cliente}{id_cliente=${cliente.id_cliente}}}" method="post" th:object="${cliente}">
+		<form action="#" th:action="@{/update/{id}{id=${cliente.id_cliente}}}" method="post" th:object="${cliente}">
 			<div class="row">
 				<div>
 					<label for"name">Name</label>

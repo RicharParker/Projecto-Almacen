@@ -1,18 +1,20 @@
 package com.ulsa.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.ulsa.entity.Categoria;
 import com.ulsa.repository.CategoriaRepository;
-
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+@Controller
 public class CategoriaController {
-private final CategoriaRepository categoriaRepository;
+	
+	private final CategoriaRepository categoriaRepository;
 	
 	//categoriaRepository = new CategoriaRepository;
 	
@@ -30,7 +32,7 @@ private final CategoriaRepository categoriaRepository;
 	}
 	
 	@PostMapping("/addcategoria")
-	public String addUser(@Validated Categoria categoria, BindingResult result, Model model) {
+	public String addCategoria(@Validated Categoria categoria, BindingResult result, Model model) {
 		if(result.hasErrors()) {
 			return "categorias/add-categoria";
 		}
@@ -39,14 +41,14 @@ private final CategoriaRepository categoriaRepository;
 		return "categorias/index-categorias";
 	}
 	
-	@GetMapping("/new")
-	public String showSignUpForm(Categoria categoria) {
+	@GetMapping("/newCategoria")
+	public String showSignUpFormCategoria(Categoria categoria) {
 		System.out.println("&&&&& showSignUpForm &&&&&&");
 		return "categorias/add-categoria";
 	}
 	
-	@GetMapping("/edit/{id}")
-	public String showUpdateForm(@PathVariable("id") long id, Model model) {
+	@GetMapping("/editCategoria/{id}")
+	public String showUpdateFormCategoria(@PathVariable("id") long id, Model model) {
 		Categoria categoria =
 				categoriaRepository
 				.findById(id)
@@ -55,8 +57,8 @@ private final CategoriaRepository categoriaRepository;
 		return "categorias/update-categoria";
 	}
 	
-	@GetMapping("/delete/{id}")
-	public String deleteUser(@PathVariable("id") long id, Model model) {
+	@GetMapping("/deleteCategoria/{id}")
+	public String deleteCategoria(@PathVariable("id") long id, Model model) {
 		Categoria categoria =
 			categoriaRepository
 				.findById(id)
@@ -66,8 +68,8 @@ private final CategoriaRepository categoriaRepository;
 		return "categorias/index-categorias";
 	}
 	
-	@PostMapping("/update/{id}")
-	public String updateUser(@PathVariable("id") long id, @Validated Categoria categoria,
+	@PostMapping("/updateCategoria/{id}")
+	public String updateCategoria(@PathVariable("id") long id, @Validated Categoria categoria,
 			BindingResult result, Model model) {
 		if(result.hasErrors()) {
 			categoria.setId_categoria(id);
@@ -77,5 +79,11 @@ private final CategoriaRepository categoriaRepository;
 		model.addAttribute("categorias", categoriaRepository.findAll());
 		return "categorias/index-categorias";
 	}
+	
+	
+	
+	
+	
+	
 
 }

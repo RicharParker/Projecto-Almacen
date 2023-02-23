@@ -1,10 +1,56 @@
 <!DOCTYPE html>
 <html lang="en" xmlns=:th="http://thymeleaf.org">
-	<head>
 
-	</head>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Title of categorias page</title>
+</head>
+
+<body>
+
+	<div id="categorias-main-content">
+		<div th:switch="${categorias}">
+			<div class="row">
+				<div>
+					<h2 th:case="null">No categorias</h2>
+					<div th:case="*">
+						<h2>Categorias</h2>
+						<table border="1">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>descripcion</th>
+									<th>Edit</th>
+									<th>Delete</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="categoria : ${categorias}">
+									<td th:text="${categoria.name}"></td>
+									<td th:text="${categoria.descripcion}"></td>
 	
-	<body>
-	<h2>Hola</h2>
-	</body>
+									<td>
+										<a th:href="@{/editCategoria/{id}(id=${categoria.id_categoria})}">
+											EDIT
+									</td>
+									<td>
+										<a th:href="@{/deleteCategoria/{id}(id=${categoria.id_categoria})}">
+											DELETE
+										</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<p>
+						<a th:href="@{/newCategoria}">Add Categoria</a>
+					</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+
 </html>
