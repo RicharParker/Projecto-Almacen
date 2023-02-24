@@ -3,25 +3,24 @@
 
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Title of proveedores page</title>
-	<title>Registro de información</title>
-	<meta charset="ISO-8859-1">
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Navegacion</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" th:href="@{/css/dashboard.css}" href="../../css/dashboard.css">
+	<title>Title of productos page</title>
 </head>
 
 <body>
 
-
-	<div id="proveedores-main-content">
+	<div id="productos-main-content">
 		<div th:switch="${proveedores}">
 			<div class="row">
-				<div>
+				<div class="col-md-2 sidebar">
+					<ul class="list-unstyled">
+						<li><a th:href="@{/}">Home</a></li>
+						<li><a th:href="@{/clientes}">Clientes</a></li>
+						<li><a th:href="@{/productos}">Producto</a></li>
+						<li><a th:href="@{/categorias}">Categoria</a></li>
+					<li><a th:href="@{/proveedores}">Proveedor</a></li>
+					</ul>
+				</div>
+<div>
 					<h2 th:case="null">No proveedores</h2>
 					<div th:case="*">
 						<h2>Proveedor</h2>
